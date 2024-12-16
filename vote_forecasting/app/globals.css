@@ -1,0 +1,97 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 0, 0. 0;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+}
+
+@layer base {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6,
+  p,
+  div {
+    @apply leading-8;
+  }
+
+  h1 {
+    @apply text-4xl font-bold;
+  }
+
+  h2 {
+    @apply text-3xl font-semibold mt-4;
+  }
+
+  h3 {
+    @apply text-2xl font-medium;
+  }
+
+  h4 {
+    @apply text-xl font-medium;
+  }
+
+  h5 {
+    @apply text-lg font-medium;
+  }
+
+  button {
+    @apply my-2 px-4 py-2 rounded-md bg-slate-700 text-white hover:bg-slate-800;
+  }
+
+  input {
+    @apply p-1 px-2 rounded outline-none border-2 focus:ring-2 focus:ring-slate-500;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  .col {
+    @apply flex flex-col;
+  }
+
+  .section-padding {
+    @apply p-4 md:p-12;
+  }
+
+  .section-margin {
+    @apply my-8 md:my-12;
+  }
+
+  .half {
+    @apply grid grid-cols-2 gap-2;
+  }
+
+  .data-input {
+    @apply flex flex-col gap-2;
+    li {
+      @apply grid grid-cols-2 gap-2;
+    }
+  }
+}
